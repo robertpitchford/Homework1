@@ -33,30 +33,60 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State private var alertIsVisible: Bool = false
+  @Environment(\.verticalSizeClass) var verticalSizeClass
+  @Environment(\.horizontalSizeClass) var horizontalSizeClass
+  @State private var foregroundColor = Color(red: 0, green: 0, blue: 0)
   @State private var redColor: Double = Constants.defaultColorValue
   @State private var greenColor: Double = Constants.defaultColorValue
   @State private var blueColor: Double = Constants.defaultColorValue
-  @State private var foregroundColor = Color(red: 0, green: 0, blue: 0)
-
+  
   var body: some View {
+    
+    ZStack {
+      if isPortrait() {
+        VStack {
+          MainView(foregroundColor: $foregroundColor, redColor: $redColor, greenColor: $greenColor, blueColor: $blueColor)
+        }
+      }
+      else {
+        HStack(spacing: Constants.mainViewPadding) {
+          MainView(foregroundColor: $foregroundColor, redColor: $redColor, greenColor: $greenColor, blueColor: $blueColor)
+        }
+      }
+    }
+    .background(Color("BackgroundColor"))
+    .padding(Constants.mainViewPadding)
+  }
+  
+  func isPortrait() -> Bool {
+    verticalSizeClass == .regular && horizontalSizeClass == .compact
+  }
+}
 
+
+struct MainView: View {
+  @Binding var foregroundColor: Color
+  @Binding var redColor: Double
+  @Binding var greenColor: Double
+  @Binding var blueColor: Double
+  
+  var body: some View {
     VStack {
       Text("Color Picker")
         .bold()
         .font(.largeTitle)
-      
       ColorWellView(foregroundColor: foregroundColor)
+    }
+    VStack {
       SliderView(colorValue: $redColor, label: "Red", tintColor: .red)
       SliderView(colorValue: $greenColor, label: "Green", tintColor: .green)
       SliderView(colorValue: $blueColor, label: "Blue", tintColor: .blue)
       
       SetColorButton(foregroundColor: $foregroundColor, redColor: redColor, greenColor: greenColor, blueColor: blueColor)
     }
-    .background(Color("BackgroundColor"))
-    .padding(Constants.mainViewPadding)
   }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
