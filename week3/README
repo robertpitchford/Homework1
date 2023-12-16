@@ -1,0 +1,48 @@
+a) 0...5 and 0..<5 are two types of _Range_. How are they different?
+  The first is a closed range and includes the final value, the second is a half-open range which does not include the last value.
+
+b) Describe type inference in Swift and give an example.
+  Type inference is where the compiler works out the type of a variable so the programmer does not need to specify it. 
+  For example, the compiler can infer the type as `Int` given the statement: `let x = 1`
+
+c) List three advantages of Playgrounds.
+  They give instant feedback, they can be easily shared, and they allow you to play around with Swift without needing to create a project
+
+d) When does the execution of a while loop end?
+  When the execution reaches the `while` statement and that statement evaluates to `false`
+
+e) True or False: Tuples in Swift can contain values of different data types.
+  True
+
+f) List three data types you have used in Swift.
+  `Double`, `Int`, `String`
+
+g) To execute alternative code when the condition of an if statement is not met, you can use what clause?
+  The `else` clause
+
+h) What is the third element of the array nums defined below?  
+let nums = [5, 0, 44, 20, 1]. 
+  The third element is `44`, but the element at index three is `20`
+
+i) An _expression_ is a unit of code that resolves to a single value.
+
+j) Define two ways to unwrap optionals in Swift.
+  Using the nil coalescing operator `??`, or using optional binding with `if let`
+
+
+========= Above & Beyond ========
+
+The output of the A&B code is:
+
+Area: square1 - 16 square2 - 25
+Area: rectangle1 - 20 rectangle2 - 20
+
+The reason is that the sqaures are instances of a value type (Struct). Value types are
+copied when they are assigned to new variables in Swift.
+Changing the side length of square2 does not affect square1 because square2 is
+a copy of square 1.
+
+The rectangle objects are instances of a reference type (Class). Assigning a reference
+type to a variable means that there are now two variables referencing the same object.
+Modifying the length of rectangle2 also modifies rectangle1 because they both refer
+to the same underlying object.
