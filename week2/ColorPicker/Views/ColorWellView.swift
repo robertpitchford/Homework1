@@ -38,7 +38,7 @@ struct ColorWellView: View {
   var body: some View {
     RoundedRectangle(cornerRadius: Constants.colorWellCornerRadius)
       .foregroundColor(foregroundColor)
-      .border(Color("BorderColor"), width: Constants.borderWidth)
+      .border(Color("BorderColor"), width: Constants.colorWellBorderWidth)
       .padding(.bottom, Constants.mainViewPadding)
   }
 }

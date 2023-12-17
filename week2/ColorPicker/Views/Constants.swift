@@ -33,11 +33,11 @@
 import Foundation
 
 enum Constants {
-  static let borderWidth = 5.0
+  static let colorWellBorderWidth = 5.0
+  static let colorWellCornerRadius = 0.0
+  static let defaultColorValue = 0.0
   static let colorMax = 255.0
   static let buttonCornerRadius = 18.0
-  static let colorWellCornerRadius = 0.0
   static let buttonStrokeWidth = 2.0
   static let mainViewPadding = 20.0
-  static let defaultColorValue = 0.0
 }
