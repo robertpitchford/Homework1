@@ -1,0 +1,31 @@
+
+a) List two Collection Types in Swift.
+   Array and String
+
+b) Name a function that uses variadic parameters.
+   the print function
+
+c) True or False: Only a class can adopt a protocol in Swift.
+   False, structs and Enums can also adopt protocols
+
+d) Name the four Named Types you have been introduced to so far.
+   Class, Struct, Enum, and Protocol
+
+e) The variadic parameter is treated as an _Array_ in the function.
+
+f) In Swift, structs are _value_ types, and classes are _reference_ types.
+
+g) True or False: Functions in Swift, by default, can alter parameters passed to the function.
+  False. A parameter must be marked `inout` in order for it to be changed within a function
+
+h) _properties_ are what a type has, and _methods_ are what a type can do.
+
+i) A class, struct, or enum that adopts a protocol is said to _conform_ to the protocol
+
+j) A lazy property is calculated only when _it is first accessed_.
+
+k) True or False: Extensions in Swift allow you to add new functionality to an existing type.
+  True
+
+l) True or False: A convenience initializer in Swift is responsible for initializing properties of a class.
+  False. That is the job of the designated initializer
